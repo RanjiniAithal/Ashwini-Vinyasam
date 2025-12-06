@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import {
   Card,
@@ -16,6 +17,29 @@ import {
   Sparkles,
   TrendingUp,
 } from "lucide-react";
+import { siteMetadata } from "@/lib/siteMetadata";
+
+const pageTitle = "About Ashwini Vinyāsam";
+const pageDescription =
+  "Learn about Ashwini Vinyāsam, a Kengeri-based embroidery studio crafting bespoke blouse, saree, lehenga, and logo designs with precision.";
+
+export const metadata: Metadata = {
+  title: pageTitle,
+  description: pageDescription,
+  alternates: {
+    canonical: "/about",
+  },
+  keywords: [...siteMetadata.keywords, "about Ashwini Vinyasam", "embroidery studio story"],
+  openGraph: {
+    title: pageTitle,
+    description: pageDescription,
+    url: "/about",
+  },
+  twitter: {
+    title: pageTitle,
+    description: pageDescription,
+  },
+};
 
 export default function AboutPage() {
   const team = [

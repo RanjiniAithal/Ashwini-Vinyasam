@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
@@ -17,6 +18,29 @@ import {
   Award,
   TrendingUp,
 } from "lucide-react";
+import { siteMetadata } from "@/lib/siteMetadata";
+
+const pageTitle = "Custom Embroidery Services in Kengeri";
+const pageDescription =
+  "Explore custom blouse, saree, lehenga, and logo embroidery by Ashwini Vinyāsam in Kengeri, Bangalore.";
+
+export const metadata: Metadata = {
+  title: pageTitle,
+  description: pageDescription,
+  alternates: {
+    canonical: "/",
+  },
+  keywords: [...siteMetadata.keywords, "embroidery Kengeri", "custom embroidery"],
+  openGraph: {
+    title: pageTitle,
+    description: pageDescription,
+    url: "/",
+  },
+  twitter: {
+    title: pageTitle,
+    description: pageDescription,
+  },
+};
 
 export default function Home() {
   const services = [

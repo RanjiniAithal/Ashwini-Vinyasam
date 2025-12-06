@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import {
   Card,
@@ -23,6 +24,29 @@ import {
   Sparkles,
 } from "lucide-react";
 import Link from "next/link";
+import { siteMetadata } from "@/lib/siteMetadata";
+
+const pageTitle = "Embroidery Services | Ashwini Vinyāsam";
+const pageDescription =
+  "Browse blouse, saree, lehenga, and logo embroidery services offered by Ashwini Vinyāsam in Kengeri, Bangalore.";
+
+export const metadata: Metadata = {
+  title: pageTitle,
+  description: pageDescription,
+  alternates: {
+    canonical: "/services",
+  },
+  keywords: [...siteMetadata.keywords, "embroidery services", "logo embroidery Bangalore"],
+  openGraph: {
+    title: pageTitle,
+    description: pageDescription,
+    url: "/services",
+  },
+  twitter: {
+    title: pageTitle,
+    description: pageDescription,
+  },
+};
 
 export default function ServicesPage() {
   const services = [
